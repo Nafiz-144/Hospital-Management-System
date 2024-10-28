@@ -3,12 +3,13 @@ import mongoose from "mongoose";
 export const dbConnection = () => {
   mongoose
     .connect(process.env.MONGO_URI, {
-      dbName: "MERN_STACK_HOSPITAL_MANAGEMENT_SYSTEM",
+      dbName: "MERN_STACK_HOSPITAL_MANAGEMENT_SYSTEM_N",
     })
+
     .then(() => {
-      console.log("Connected to database!");
+      console.log("Database connection successful");
     })
     .catch((err) => {
-      console.log("Some error occured while connecting to database:", err);
+      console.log(`Database connection failed: ${err}`);
     });
 };
